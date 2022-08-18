@@ -25,6 +25,7 @@
 <body>
   <main>
     <div class="mobile-section">
+      <div class="purple-color"></div>
       <div class="mobile">
         <div class="avatar-section">
           <div class="left">
@@ -52,22 +53,21 @@
           <div class="message left-message">She looks so happy! The time we discussed works. How long shall I take her
             out for?</div>
 
-          <button class="purple-message">
-            <div>
-              <i class="fa-regular fa-circle"></i>
-              30 minute walk
-            </div>
-            <span>$29</span>
-          </button>
-          <button class="purple-message">
-            <div>
-              <i class="fa-regular fa-circle"></i>
-              1 hour walk
-            </div>
-            <span>$49</span>
-          </button>
-          <input type="text" name="message" id="message" placeholder="Type a message…">
-          <i class="fa-solid fa-angle-right"></i>
+
+          <label for="radiobtn1" class="purple-message">
+            30 minute walk <span>$29</span>
+            <input type="radio" id="radiobtn1" />
+          </label>
+          <label for="radiobtn2" class="purple-message">
+            1 hour walk <span>$49</span>
+            <input type="radio" id="radiobtn2" />
+          </label>
+
+          <div class="type-message">
+            <input type="text" name="message" placeholder="Type a message…">
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+          </input>
         </div>
 
       </div>
@@ -77,7 +77,7 @@
       <p>Stay in touch with our dog walkers through the chat interface. This makes it easy to
         discuss arrangements and make bookings. Once the walk has been completed you can rate
         your walker and book again all through the chat.</p>
-
+      <div class="light-color"></div>
     </div>
   </main>
 

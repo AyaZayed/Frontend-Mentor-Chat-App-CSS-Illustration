@@ -38,6 +38,7 @@ body {
 
 main {
   display: flex;
+  height: 100vh;
 }
 
 .mobile-section,
@@ -50,14 +51,17 @@ main {
 }
 
 .mobile-section .mobile {
-  max-width: 50%;
+  max-width: 40%;
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
   float: right;
-  border: 10px solid white;
+  outline: 11px solid var(--White);
+  margin: 4rem 0;
+  z-index: 1;
+  margin-right: 4rem;
 }
 
 .mobile-section .mobile .avatar-section {
@@ -69,6 +73,26 @@ main {
       var(--Light-Magenta));
   color: var(--White);
   padding: 1rem;
+  padding-top: 2rem;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  z-index: 2;
+  position: relative;
+}
+
+.mobile-section .mobile .avatar-section::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  width: 60%;
+  height: 40px;
+  left: 20%;
+  background: var(--White);
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
 }
 
 .mobile-section .mobile .avatar-section img {
@@ -98,6 +122,8 @@ main {
   flex-direction: column;
   padding: 10px;
   background-color: var(--Light-Grayish-Violet);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .mobile-section .mobile .chat .message {
@@ -134,8 +160,8 @@ main {
   -o-border-radius: 10px;
 }
 
-.mobile-section .mobile button {
-  max-width: 85%;
+.mobile-section .mobile .purple-message {
+  max-width: 65%;
   margin-bottom: 10px;
   border: none;
   padding: 10px;
@@ -147,15 +173,54 @@ main {
   border-bottom-left-radius: 3px;
   display: flex;
   justify-content: space-between;
+  position: relative;
+  padding-left: 38px;
 }
 
-.mobile-section .mobile button i:first-of-type {
+.mobile-section .mobile .purple-message input[type="radio"] {
+  color: transparent;
+  position: absolute;
+  left: 10px;
+  margin-right: 10px;
+  transform: translateY(25%);
+  -webkit-transform: translateY(25%);
+  -moz-transform: translateY(25%);
+  -ms-transform: translateY(25%);
+  -o-transform: translateY(25%);
+  accent-color: var(--Moderate-Violet);
+}
+
+.mobile-section .mobile .purple-message input[type="radio"]:after {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  top: -2px;
+  left: 0;
+  position: relative;
+  background-color: var(--Light-Magenta);
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 1px solid var(--Grayish-Blue);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.mobile-section .mobile .purple-message i:first-of-type {
   margin-right: 10px;
 }
 
-.mobile-section .mobile button span {
+.mobile-section .mobile .purple-message span {
 
   font-weight: 700;
+}
+
+.mobile-section .mobile .type-message {
+  width: 85%;
+  margin-bottom: 10px;
+  position: relative;
 }
 
 .mobile-section .mobile input[type='text'] {
@@ -166,14 +231,39 @@ main {
   -moz-border-radius: 40px;
   -ms-border-radius: 40px;
   -o-border-radius: 40px;
+  width: 100%;
+  height: 22px;
+  outline: none;
 }
 
 .mobile-section .mobile input[type='text']::placeholder {
   color: var(--Grayish-Blue);
 }
 
+.mobile-section .mobile .type-message i {
+  position: absolute;
+  padding: 10px;
+  width: 12px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: -33px;
+  top: 5px;
+  color: var(--White);
+  background-color: var(--Very-Dark-Desaturated-Violet);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
 .text-section {
-  padding: 7rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .text-section h1 {
@@ -184,6 +274,35 @@ main {
 .text-section p {
   color: var(--Dark-Grayish-Violet);
   max-width: 80%;
+}
+
+.purple-color,
+.light-color {
+  height: 85%;
+  position: absolute;
+  z-index: -1;
+
+}
+
+.mobile-section .purple-color {
+  background: linear-gradient(to top, var(--Light-Violet), var(--Light-Magenta));
+  width: 27%;
+  left: 0;
+  height: 125%;
+  top: -300px;
+  border-radius: 240px;
+  -webkit-border-radius: 240px;
+  -moz-border-radius: 240px;
+  -ms-border-radius: 240px;
+  -o-border-radius: 240px;
+}
+
+.text-section .light-color {
+  width: 50%;
+  background-color: var(--Light-Grayish-Violet);
+  right: 0;
+  bottom: 0;
+  border-top-left-radius: 300px;
 }
 
 .attribution {
