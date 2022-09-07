@@ -48,20 +48,24 @@ main {
 
 .mobile-section {
   padding-right: 7rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
 
 .mobile-section .mobile {
-  max-width: 40%;
+  max-width: 20rem;
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
-  float: right;
   outline: 11px solid var(--White);
-  margin: 4rem 0;
-  z-index: 1;
-  margin-right: 4rem;
+  margin: 6rem 0;
+  z-index: 2;
+  height: fit-content;
+  box-shadow: 0px 0px 30px -2px hsla(271, 36%, 24%, 0.514);
+
 }
 
 .mobile-section .mobile .avatar-section {
@@ -83,9 +87,9 @@ main {
 .mobile-section .mobile .avatar-section::before {
   content: "";
   position: absolute;
-  top: -20px;
+  top: -10px;
   width: 60%;
-  height: 40px;
+  height: 32px;
   left: 20%;
   background: var(--White);
   border-radius: 15px;
@@ -264,6 +268,7 @@ main {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  font-size: x-large;
 }
 
 .text-section h1 {
@@ -273,20 +278,23 @@ main {
 
 .text-section p {
   color: var(--Dark-Grayish-Violet);
-  max-width: 80%;
+  max-width: 73%;
+  line-height: 30px;
 }
 
 .purple-color,
 .light-color {
-  height: 85%;
   position: absolute;
   z-index: -1;
+}
 
+.light-color {
+  height: 85%;
 }
 
 .mobile-section .purple-color {
   background: linear-gradient(to top, var(--Light-Violet), var(--Light-Magenta));
-  width: 27%;
+  width: 43%;
   left: 0;
   height: 125%;
   top: -300px;
@@ -305,16 +313,40 @@ main {
   border-top-left-radius: 300px;
 }
 
+@media screen and (max-width: 768px) {
+  main {
+    flex-wrap: wrap;
+  }
+
+  .mobile-section,
+  .text-section {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mobile-section {
+    margin-bottom: 5rem;
+    padding: 0;
+  }
+
+  .text-section {
+    text-align: center;
+  }
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
 }
 
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--Moderate-Violet);
   text-decoration: none;
 }
 
 .attribution a:hover {
   text-decoration: underline;
+  color: var(--Light-Magenta);
 }
